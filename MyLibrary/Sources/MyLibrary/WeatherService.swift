@@ -24,10 +24,17 @@ class WeatherServiceImpl: WeatherService {
     }
 }
 
-private struct Weather: Decodable {
+public struct Weather: Decodable {
     let main: Main
 
     struct Main: Decodable {
         let temp: Double
+    }
+}
+
+extension Weather {
+    init(_ input: Double) {
+        let temp_t = input
+        self.main = Weather.Main(temp: temp_t)
     }
 }

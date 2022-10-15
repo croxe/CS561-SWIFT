@@ -16,6 +16,9 @@ let package = Package(
         .library(
             name: "MyLibrary",
             targets: ["MyLibrary"]),
+        .library(
+            name: "WeatherService",
+            targets: ["MyLibrary"]),
     ],
     dependencies: [
         .package(url: "https://github.com/Alamofire/Alamofire.git", .upToNextMajor(from: "5.5.0"))
