@@ -1,8 +1,7 @@
-//@testable import class WeatherService.WeatherServiceImpl
-//@testable import struct Weather
+
 import XCTest
 @testable import MyLibrary
-@testable import struct MyLibrary.Weather
+//@testable import struct MyLibrary.Weather
 
 final class WeatherServiceTests: XCTestCase {
 
@@ -18,8 +17,8 @@ final class WeatherServiceTests: XCTestCase {
         let testingWeather: Weather = try JSONDecoder().decode(Weather.self, from: rawData)
         let number = 19.0
 
-        print(testingWeather.main.temp)
-        print(type(of: testingWeather))
+        // print(testingWeather.main.temp)
+        // print(type(of: testingWeather))
 
         // Then
         XCTAssertNotNil(testingWeather)
@@ -56,4 +55,5 @@ final class WeatherServiceTests: XCTestCase {
         XCTAssertNotNil(iniWeather)
         XCTAssert(iniWeather.main.temp == number )
     }
+    
 }

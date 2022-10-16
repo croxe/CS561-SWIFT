@@ -14,7 +14,6 @@ public class MyLibrary {
         if number == 3 || number == 5 || number == 8 {
             return true
         }
-
         // Fetch the current weather from the backend.
         // If the current temperature, in Farenheit, contains an 8, then that's lucky.
         do {
@@ -23,6 +22,7 @@ public class MyLibrary {
         } catch {
             return nil
         }
+        
     }
 }
 
