@@ -6,6 +6,7 @@ import XCTest
 final class WeatherServiceTests: XCTestCase {
 
     func testWeatherModelWithJson() throws {
+        // Given
         let rawData = """
         {
             "main": {
@@ -13,12 +14,10 @@ final class WeatherServiceTests: XCTestCase {
             },
         }
         """.data(using: .utf8)!
-        
-        let testingWeather: Weather = try JSONDecoder().decode(Weather.self, from: rawData)
         let number = 19.0
 
-        // print(testingWeather.main.temp)
-        // print(type(of: testingWeather))
+        // When
+        let testingWeather: Weather = try JSONDecoder().decode(Weather.self, from: rawData)
 
         // Then
         XCTAssertNotNil(testingWeather)
@@ -26,15 +25,11 @@ final class WeatherServiceTests: XCTestCase {
     }
 
     func testWeatherModelWithParameters() throws {
-        
+        // Given        
         let number = 19.0
         
+        // When
         let newWeather = Weather(main: Weather.Main(temp: 19.0))        
-        
-        let iniWeather = Weather(19.0)
-
-        //print(newWeather.main.temp)
-        //print(type(of: newWeather))
 
         // Then
         XCTAssertNotNil(newWeather)
@@ -42,14 +37,11 @@ final class WeatherServiceTests: XCTestCase {
     }
 
     func testWeatherModelWithInit() throws {
-
-
+        // Given
         let number = 19.0    
         
+        // When
         let iniWeather = Weather(19.0)
-
-        //print(iniWeather.main.temp)
-        //print(type(of: iniWeather))
 
         // Then
         XCTAssertNotNil(iniWeather)
