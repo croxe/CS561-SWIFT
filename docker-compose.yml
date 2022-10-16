@@ -1,0 +1,7 @@
+services:
+  dev:
+    image: "swiftlang/swift:nightly-focal"
+    volumes:
+      - D:/User/Desktop/CS561/cs561-swift:/MyLibrary
+    environment:
+      - USER=Songgao
